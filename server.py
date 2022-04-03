@@ -1,6 +1,9 @@
-from flask import Flask, render_template
+from env import KEY
+from flask import Flask, render_template, session, request, redirect
+from env import KEY
+
 app = Flask(__name__)
-app.secret_key = "the key is a secret, the secret is the key"
+app.secret_key = KEY
 
 @app.route('/')
 def main():

@@ -4,31 +4,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <title>Data Survey</title>
 </head>
 <body>
-  <form action="/">
-    <label for="name">Your Name</label>
-    <input type="text" name = "name">
-    <td>Dojo Location</td>
-      <td>
-        <select name='location'>
-          <option value='0'>Arlington</option>
-          <option value='1'>Berkely</option>
-          <option value='2'>Boise</option>
-          <option value='3'>Chicago</option>
-          <option value='4'>Dallas</option>
-          <option value="5">Los Angeles</option>
-          <option value="6">Orange County</option>
-          <option value="7">San Jose</option>
-          <option value="8">Seattle</option>
-          <option value="9">Tulsa</option>
-          <option value="10">Online</option>
-        </select>
-      </td>
+  <form class="form" action="/">
+    <div class="space">
+      <label for="name">Your Name</label>
+      <input type="text" name = "name" class="box">
+    </div>
+    <div class="space">
+      <td>Dojo Location</td>
+        <td>
+          <select class="box" name='location'>
+            <option value='0'>Arlington</option>
+            <option value='1'>Berkely</option>
+            <option value='2'>Boise</option>
+            <option value='3'>Chicago</option>
+            <option value='4'>Dallas</option>
+            <option value="5">Los Angeles</option>
+            <option value="6">Orange County</option>
+            <option value="7">San Jose</option>
+            <option value="8">Seattle</option>
+            <option value="9">Tulsa</option>
+            <option value="10">Online</option>
+          </select>
+        </td>
+    </div>
+    <div class="space">
       <td>Favorite Language</td>
         <td>
-          <select name='language'>
+          <select name='language' class="box">
             <option value='0'>Python</option>
             <option value='1'>JavaScript</option>
             <option value='2'>Java</option>
@@ -42,9 +48,10 @@
             <option value="10">PHP</option>
           </select>
         </td>
-    <label for="comment">Comment(Optional)</label>
-    <textarea name="comment"cols="30" rows="10"></textarea>
-    <input type="Submit" value="Submit">
+    </div>
+    <label for="comment" class="space">Comment(Optional)</label>
+    <textarea name="comment"cols="30" rows="10" class="space"></textarea>
+    <input type="Submit" value="Submit" class="submit">
   </form>
 </body>
 </html>
