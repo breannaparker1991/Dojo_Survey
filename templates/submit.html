@@ -4,9 +4,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
   <title>Submit Screen</title>
 </head>
-<body>
-  
+<body class="form">
+  <table >
+    <thead>
+    <tr>
+        <th><h3>Submitted Info</h3></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Name</td>
+        <td>{{name}}</td>
+    </tr>
+    <tr>
+        <td>Dojo Location</td>
+        <td>{{location}}</td>
+    </tr>
+    <tr>
+        <td>Favorite Langauge</td>
+        <td>{{language}}</td>
+    </tr>
+    <tr>
+        <td>Comments</td>
+        <td>{{comment}}</td>
+    </tr>
+    </tbody>
+</table>
+<div class="box-button"><a href="/"><button>Go Back</button></a></div>
+
+
 </body>
 </html>
