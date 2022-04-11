@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, session
 from flask_app.gitignore.env import KEY
 
 app = Flask(__name__)

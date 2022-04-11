@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<title>Title</title>
+</head>
+<body>
+  <form class="col-5 mx-auto border p-5 my-5 text-light bg-dark" action="/main" method="POST">
+    <div class="form-group">
+      {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+        {% if messages %}                            <!-- check if there are any messages -->
+          {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <label for="name">Your Name</label>
+      <input type="text" name = "name" class="box">
+    </div>
+    <div class="form-group">
+      <td>Dojo Location</td>
+        <td>
+          <select class="form-control" id="dojo" name='location'>
+            <option value='Arlington'>--Select A Location--</option>
+            <option value='Berkely'>Berkely</option>
+            <option value='Boise'>Boise</option>
+            <option value='Chicago'>Chicago</option>
+            <option value='Dallas'>Dallas</option>
+            <option value="Los Angeles">Los Angeles</option>
+            <option value="Orange County">Orange County</option>
+            <option value="San Jose">San Jose</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Tulsa">Tulsa</option>
+            <option value="Online">Online</option>
+          </select>
+        </td>
+    </div>
+    <div class="form-group">
+      <td>Favorite Language</td>
+        <td>
+          <select name='language' id="language" class="form-control">
+            <option value='Python'>--Select A Language--</option>
+            <option value='JavaScript'>JavaScript</option>
+            <option value='Java'>Java</option>
+            <option value='C#'>Python</option>
+            <option value='C'>C</option>
+            <option value="C++">C++</option>
+            <option value="Go">Go</option>
+            <option value="R">R</option>
+            <option value="Swift">Swift</option>
+            <option value="PHP">PHP</option>
+          </select>
+        </td>
+    </div>
+    <div class="form-group">
+      <label name="comment" for="comment">Comment</label>
+      <textarea name="comment"cols="50" rows="10" class="form-control"></textarea>
+      <input type="Submit" value="Submit">
+    </div>
+  </form>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>

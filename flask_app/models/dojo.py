@@ -1,5 +1,3 @@
-from unittest import result
-from wsgiref import validate
 from flask import flash
 from flask_app.config.mysqlconnection import connectToMySQL 
 
@@ -19,20 +17,26 @@ class Dojo:
     query = "INSERT into dojos (name, location, language,comment) VALUES (%(name)s, %(location)s, %(language)s, %(comment)s); "
     result = connectToMySQL(cls.db).query_db(query,data)
     return result
-    
+  
+  @classmethod
+  def get(cls):
+    query = "SELECT * FROM dojos ORDER BY dojos.id DESC LIMIT 1;"
+    result = connectToMySQL(cls.db).query_db(query)
+    return Dojo(result[0])
+        
   @staticmethod
-  def validate (dojo_survey):
+  def validate (dojo):
     validate = True
-    if len (dojo_survey['name']) < 1:
+    if len (dojo['name']) < 1:
       flash("Must include a name.")
       validate = False
-    if len (dojo_survey['location']) < 1:
+    if len (dojo['location']) < 1:
       flash("Must choose a dojo location.")
       validate = False
-    if len (dojo_survey['language']) < 1:
+    if len (dojo['language']) < 1:
       flash("Must choose a favorite language.")
       validate = False
-    if len (dojo_survey['comment']) < 1:
+    if len (dojo['comment']) < 1:
       flash("Must include a comment.")
       validate = False
     return validate

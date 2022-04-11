@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, request, redirect
+from flask import render_template, request, redirect
 from flask_app import app
 from flask_app.models.dojo import Dojo
 
@@ -19,6 +19,4 @@ def main():
 
 @app.route('/results')
 def results():
-  return render_template("submit.html", name=session['name'], 
-  location=session['location'], language=session['langauge'],
-  comment=session['comment'])
+  return render_template("submit.html", dojo = Dojo.get())
